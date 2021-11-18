@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">KikeOu</string>
-    <string name="qr_code_button">Generate QR Code</string>
     <string name="qr_code_image">Image QR Code</string>
     <string name="share">Share</string>
     <string name="permissionToGrant">Camera</string>
+
+    <!-- NavBar -->
+    <string name="search">Search</string>
+    <string name="generate_qr_code">Add</string>
+    <string name="scan_qr_code">Scan</string>
 </resources>
