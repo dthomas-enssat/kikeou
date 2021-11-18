@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KikeOu">
         <activity
+            android:name=".ScanQrCode"
+            android:exported="true" />
+        <activity
+            android:name=".GenerateQrCode"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
