@@ -65,4 +65,10 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha31"
 
     implementation "com.google.mlkit:object-detection-custom:16.3.3"
+
+    // Room components
+    def roomVersion = "2.3.0"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
 }
