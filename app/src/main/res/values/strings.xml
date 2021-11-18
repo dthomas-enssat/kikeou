@@ -3,4 +3,5 @@
     <string name="qr_code_button">Generate QR Code</string>
     <string name="qr_code_image">Image QR Code</string>
     <string name="share">Share</string>
+    <string name="permissionToGrant">Camera</string>
 </resources>
