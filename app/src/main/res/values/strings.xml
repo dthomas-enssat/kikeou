@@ -8,6 +8,8 @@
     <string name="generate_qr_code">Add</string>
     <string name="scan_qr_code">Scan</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Form (generate) -->
+    <string name="name">Nom</string>
+    <string name="email">E-mail</string>
+    <string name="phone">Téléphone</string>
 </resources>
