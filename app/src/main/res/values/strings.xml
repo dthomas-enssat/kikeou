@@ -8,4 +8,9 @@
     <string name="search">Search</string>
     <string name="generate_qr_code">Add</string>
     <string name="scan_qr_code">Scan</string>
+
+    <!-- Form (generate) -->
+    <string name="name">Nom</string>
+    <string name="email">E-mail</string>
+    <string name="phone">Téléphone</string>
 </resources>
