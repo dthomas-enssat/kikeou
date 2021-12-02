@@ -12,9 +12,13 @@
     <string name="name">Nom</string>
     <string name="email">E-mail</string>
     <string name="phone">Téléphone</string>
+    <string name="planning">Calendrier hebdomadaire</string>
     <string name="monday">Lundi</string>
     <string name="tuesday">Mardi</string>
     <string name="wednesday">Mercredi</string>
     <string name="thursday">Jeudi</string>
     <string name="friday">Vendredi</string>
+    <string name="morning">Matin</string>
+    <string name="afternoon">Après-midi</string>
+    <string name="generate">Générer QR code</string>
 </resources>
