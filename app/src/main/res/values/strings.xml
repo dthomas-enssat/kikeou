@@ -21,4 +21,7 @@
     <string name="morning">Matin</string>
     <string name="afternoon">Après-midi</string>
     <string name="generate">Générer QR code</string>
+
+    <!-- Form (search) -->
+    <string name="key">Veuillez saisir un mot de recherche</string>
 </resources>
