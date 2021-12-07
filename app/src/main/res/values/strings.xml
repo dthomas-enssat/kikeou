@@ -25,4 +25,7 @@
 
     <!-- Form (search) -->
     <string name="key">Veuillez saisir un mot de recherche</string>
+
+    <!-- Layout (Camera) -->
+    <string name="close_fragment">Close Fragment</string>
 </resources>
