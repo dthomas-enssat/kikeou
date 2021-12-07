@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/search"
-        android:name="fr.enssat.kikeou.thomas_bricaud.search"
+        android:name="fr.enssat.kikeou.thomas_bricaud.search.search"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/generateQrCode"
-        android:name="fr.enssat.kikeou.thomas_bricaud.GenerateQrCode"
+        android:name="fr.enssat.kikeou.thomas_bricaud.generate.GenerateQrCode"
         android:label="fragment_generate_qr_code"
         tools:layout="@layout/fragment_generate_qr_code" />
 
     <fragment
         android:id="@+id/scanQrCode"
-        android:name="fr.enssat.kikeou.thomas_bricaud.ScanQrCode"
+        android:name="fr.enssat.kikeou.thomas_bricaud.scan.ScanQrCode"
         android:label="fragment_scan_qr_code"
         tools:layout="@layout/fragment_scan_qr_code" />
 

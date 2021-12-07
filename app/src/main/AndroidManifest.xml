@@ -10,10 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KikeOu">
         <activity
-            android:name=".ScanQrCode"
-            android:exported="true" />
-        <activity
-            android:name=".GenerateQrCode"
+            android:name=".scan.CameraActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
