@@ -1,6 +1,5 @@
 package fr.enssat.kikeou.thomas_bricaud.scan
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,10 +14,19 @@ import fr.enssat.kikeou.thomas_bricaud.R
  */
 class ScanQrCode : Fragment() {
 
+    private val contract = CameraActivityContract()
+    private val getQrCode = registerForActivityResult(contract) { json: String? ->
+        if(json != null) {
+            print(json)
+            // Save in db the json
+        } else {
+            print("No Json detected")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val intent = Intent(context, CameraActivity::class.java)
-        startActivity(intent)
+        getQrCode.launch(null)
     }
 
     override fun onCreateView(
