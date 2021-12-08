@@ -1,6 +1,7 @@
-package fr.enssat.kikeou.thomas_bricaud
+package fr.enssat.kikeou.thomas_bricaud.scan
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
@@ -27,6 +28,7 @@ import com.google.mlkit.vision.objects.custom.CustomObjectDetectorOptions
 //Naming convention: camera_layout.xml layout -> CameraLayoutBinding
 import fr.enssat.kikeou.thomas_bricaud.databinding.CameraLayoutBinding
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
+import fr.enssat.kikeou.thomas_bricaud.R
 
 
 class CameraActivity : AppCompatActivity() {
@@ -35,6 +37,7 @@ class CameraActivity : AppCompatActivity() {
     private lateinit var binding: CameraLayoutBinding
     private lateinit var objectDetector: ObjectDetector
     private lateinit var cameraProviderFuture : ListenableFuture<ProcessCameraProvider>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -154,6 +157,15 @@ class CameraActivity : AppCompatActivity() {
                                     binding.layout.removeViewAt(1)
                                 }
                                 binding.layout.addView(element,1)
+
+                                var resultIntent = Intent();
+                                if(rawValue != null) {
+                                    resultIntent.putExtra("json", rawValue)
+                                    setResult(RESULT_OK, resultIntent)
+
+                                    imageProxy.close()
+                                    finish()
+                                }
                             }
                             imageProxy.close()
                         }

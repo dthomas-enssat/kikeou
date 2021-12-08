@@ -1,7 +1,31 @@
 <resources>
     <string name="app_name">KikeOu</string>
-    <string name="qr_code_button">Generate QR Code</string>
     <string name="qr_code_image">Image QR Code</string>
-    <string name="share">Share</string>
+    <string name="share">Partager</string>
     <string name="permissionToGrant">Camera</string>
+
+    <!-- NavBar -->
+    <string name="search">Rechercher</string>
+    <string name="generate_qr_code">Ajouter</string>
+    <string name="scan_qr_code">Scanner</string>
+
+    <!-- Form (generate) -->
+    <string name="name">Nom</string>
+    <string name="email">E-mail</string>
+    <string name="phone">Téléphone</string>
+    <string name="planning">Calendrier hebdomadaire</string>
+    <string name="monday">Lundi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="friday">Vendredi</string>
+    <string name="morning">Matin</string>
+    <string name="afternoon">Après-midi</string>
+    <string name="generate">Générer QR code</string>
+
+    <!-- Form (search) -->
+    <string name="key">Veuillez saisir un mot de recherche</string>
+
+    <!-- Layout (Camera) -->
+    <string name="close_fragment">Close Fragment</string>
 </resources>
