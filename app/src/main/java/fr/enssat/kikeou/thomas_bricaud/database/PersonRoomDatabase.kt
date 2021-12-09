@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
  * This is the backend. The database. This used to be done by the OpenHelper.
  * The fact that this has very few comments emphasizes its coolness.
  */
-@Database(entities = [Person::class], version = 1)
+@Database(entities = [Person::class, Week::class], version = 1)
 abstract class PersonRoomDatabase : RoomDatabase() {
 
     abstract fun personDao(): PersonDao
@@ -95,20 +95,20 @@ abstract class PersonRoomDatabase : RoomDatabase() {
             person = Person("Dorian!", null, Contact("dbricaud@enssat.fr", null, null))
             personDao.insert(person)
 
-            var loc = arrayOf(
-                Location(1, "here"),
-                Location(2,  "there"),
-                Location(3, "home"),
-                Location(4, "office"),
-                Location(5, "somewhere"),
-                Location(6, "week end"),
-                Location(7, "week end")
-            )
+            var day1 = "here"
+            var day2 = "there"
+            var day3 = "home"
+            var day4 = "office"
+            var day5 = "somewhere"
+            var day6 = "week end"
+            var day7 = "week end"
 
-            var week = Week(1, "David", loc)
+
+            var week = Week(1, "David", day1, day2, day3, day4, day5, day6, day7)
             weekDao.insert(week)
 
-            week = Week(1, "Dorian", loc)
+            week = Week(1, "Dorian", day1, day2, day3, day4, day5, day6, day7)
+            weekDao.insert(week)
         }
     }
 }

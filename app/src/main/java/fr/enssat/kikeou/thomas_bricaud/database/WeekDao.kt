@@ -12,8 +12,8 @@ interface WeekDao {
     fun getWeeks(): Flow<List<Week>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(week: Week)
+    fun insert(week: Week)
 
     @Query("DELETE FROM week_table")
-    suspend fun deleteAll()
+    fun deleteAll()
 }

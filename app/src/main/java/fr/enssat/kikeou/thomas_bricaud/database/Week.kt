@@ -6,9 +6,6 @@ import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
 import androidx.room.PrimaryKey
 
-class Location(var day:Int, var place:String)
-
-
 @Entity(tableName = "week_table", foreignKeys = [
     ForeignKey(entity = Person::class,
         parentColumns = ["name"],
@@ -18,7 +15,13 @@ class Location(var day:Int, var place:String)
 ])
 data class Week(@ColumnInfo(name = "num") var num:Int,
                 @ColumnInfo(name = "name") var name:String,
-                @ColumnInfo(name = "loc") var loc:Array<Location>
+                @ColumnInfo(name = "day1") var day1:String,
+                @ColumnInfo(name = "day2") var day2:String,
+                @ColumnInfo(name = "day3") var day3:String,
+                @ColumnInfo(name = "day4") var day4:String,
+                @ColumnInfo(name = "day5") var day5:String,
+                @ColumnInfo(name = "day6") var day6:String,
+                @ColumnInfo(name = "day7") var day7:String,
                 ){
     @PrimaryKey(autoGenerate = true)
     private var id:Int =0
@@ -28,26 +31,4 @@ data class Week(@ColumnInfo(name = "num") var num:Int,
         fun setId(value:Int) {
             id = value
         }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Week
-
-        if (num != other.num) return false
-        if (name != other.name) return false
-        if (!loc.contentEquals(other.loc)) return false
-        if (id != other.id) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = num
-        result = 31 * result + name.hashCode()
-        result = 31 * result + loc.contentHashCode()
-        result = 31 * result + id
-        return result
-    }
 }

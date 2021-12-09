@@ -22,6 +22,7 @@
             android:layout_column="1"
             android:layout_weight="1"
             android:inputType="text"
+            android:hint="@string/name"
             android:labelFor="@+id/name" />
     </TableRow>
     <TableRow
@@ -39,6 +40,7 @@
             android:layout_column="1"
             android:layout_weight="1"
             android:inputType="textEmailAddress"
+            android:hint="@string/email"
             android:labelFor="@+id/email" />
     </TableRow>
     <TableRow
@@ -56,6 +58,7 @@
             android:layout_column="1"
             android:layout_weight="1"
             android:inputType="phone"
+            android:hint="@string/phone"
             android:labelFor="@+id/phone" />
     </TableRow>
     <TextView
@@ -84,14 +87,6 @@
             android:inputType="text"
             android:labelFor="@+id/monday"
             android:hint="@string/morning"/>
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/monday"
-            android:hint="@string/afternoon" />
     </TableRow>
     <TableRow
         android:layout_width="match_parent"
@@ -109,15 +104,7 @@
             android:layout_weight="1"
             android:inputType="text"
             android:labelFor="@+id/tuesday"
-            android:hint="@string/morning"/>
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/tuesday"
-            android:hint="@string/afternoon" />
+            android:hint="@string/tuesday"/>
     </TableRow>
     <TableRow
         android:layout_width="match_parent"
@@ -135,15 +122,7 @@
             android:layout_weight="1"
             android:inputType="text"
             android:labelFor="@+id/wednesday"
-            android:hint="@string/morning" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/wednesday"
-            android:hint="@string/afternoon" />
+            android:hint="@string/wednesday" />
     </TableRow>
     <TableRow
         android:layout_width="match_parent"
@@ -161,15 +140,7 @@
             android:layout_weight="1"
             android:inputType="text"
             android:labelFor="@+id/thursday"
-            android:hint="@string/morning" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/thursday"
-            android:hint="@string/afternoon" />
+            android:hint="@string/thursday" />
     </TableRow>
     <TableRow
         android:layout_width="match_parent"
@@ -187,15 +158,7 @@
             android:layout_weight="1"
             android:inputType="text"
             android:labelFor="@+id/friday"
-            android:hint="@string/morning" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/friday"
-            android:hint="@string/afternoon" />
+            android:hint="@string/friday" />
     </TableRow>
     <Button
         android:id="@+id/generate"
