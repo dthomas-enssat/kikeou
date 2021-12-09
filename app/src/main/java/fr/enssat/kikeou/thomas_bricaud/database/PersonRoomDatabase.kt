@@ -33,6 +33,7 @@ import kotlinx.coroutines.launch
 abstract class PersonRoomDatabase : RoomDatabase() {
 
     abstract fun personDao(): PersonDao
+    abstract fun weekDao(): WeekDao
 
     companion object {
         @Volatile
@@ -48,7 +49,7 @@ abstract class PersonRoomDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     PersonRoomDatabase::class.java,
-                    "word_database"
+                    "person_database"
                 )
                     // Wipes and rebuilds instead of migrating if no Migration object.
                     // Migration is not part of this codelab.
@@ -73,7 +74,7 @@ abstract class PersonRoomDatabase : RoomDatabase() {
                 // comment out the following line.
                 INSTANCE?.let { database ->
                     scope.launch(Dispatchers.IO) {
-                        populateDatabase(database.personDao())
+                        populateDatabase(database.personDao(), database.weekDao())
                     }
                 }
             }
@@ -83,15 +84,31 @@ abstract class PersonRoomDatabase : RoomDatabase() {
          * Populate the database in a new coroutine.
          * If you want to start with more words, just add them.
          */
-        suspend fun populateDatabase(personDao: PersonDao) {
+        suspend fun populateDatabase(personDao: PersonDao, weekDao: WeekDao) {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
             personDao.deleteAll()
+            weekDao.deleteAll()
 
-            var word = Person("David")
-            personDao.insert(word)
-            word = Person("Dorian!")
-            personDao.insert(word)
+            var person = Person("David", null, Contact("dthomas@enssat.fr", null, null))
+            personDao.insert(person)
+            person = Person("Dorian!", null, Contact("dbricaud@enssat.fr", null, null))
+            personDao.insert(person)
+
+            var loc = arrayOf(
+                Location(1, "here"),
+                Location(2,  "there"),
+                Location(3, "home"),
+                Location(4, "office"),
+                Location(5, "somewhere"),
+                Location(6, "week end"),
+                Location(7, "week end")
+            )
+
+            var week = Week(1, "David", loc)
+            weekDao.insert(week)
+
+            week = Week(1, "Dorian", loc)
         }
     }
 }
