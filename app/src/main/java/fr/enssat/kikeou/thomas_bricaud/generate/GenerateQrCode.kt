@@ -37,7 +37,8 @@ class GenerateQrCode : Fragment(), AdapterView.OnItemSelectedListener {
         val weeklyArray = arrayListOf<String>();
         val week: Calendar = Calendar.getInstance()
         for (i in 0..3) {
-            val weeks = (week.get(Calendar.WEEK_OF_YEAR) + i) % 52
+            var weeks = (week.get(Calendar.WEEK_OF_YEAR) + i) % 52
+            if (weeks == 0) weeks = 52;
             weeklyArray.add(weeks.toString())
         }
         adapter = ArrayAdapter(v.context, android.R.layout.simple_spinner_dropdown_item, weeklyArray)
