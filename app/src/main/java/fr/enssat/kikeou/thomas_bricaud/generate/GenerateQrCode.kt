@@ -9,9 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
-import androidx.viewbinding.ViewBindings
 import fr.enssat.kikeou.thomas_bricaud.R
-import fr.enssat.kikeou.thomas_bricaud.scan.ScanQrCode
 
 /**
  * A simple [Fragment] subclass.
@@ -29,9 +27,9 @@ class GenerateQrCode : Fragment(), AdapterView.OnItemSelectedListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var v = inflater.inflate(R.layout.fragment_generate_qr_code, container, false)
-        var btnGenerate: Button = v.findViewById(R.id.generate)
-        var spinner: Spinner = v.findViewById(R.id.weekly_spinner)
+        val v = inflater.inflate(R.layout.fragment_generate_qr_code, container, false)
+        val btnGenerate: Button = v.findViewById(R.id.generate)
+        val spinner: Spinner = v.findViewById(R.id.weekly_spinner)
         btnGenerate.setOnClickListener {
             generate(v)
         }
@@ -59,16 +57,5 @@ class GenerateQrCode : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onNothingSelected(parent: AdapterView<*>) {
         // for spinner element
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameter
-         * @return A new instance of fragment ScanQrCode.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance() = GenerateQrCode().apply {}
     }
 }
