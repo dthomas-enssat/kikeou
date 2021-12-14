@@ -28,4 +28,6 @@
 
     <!-- Layout (Camera) -->
     <string name="close_fragment">Close Fragment</string>
+
+    <string name="quote_format">\"%s\"</string>
 </resources>

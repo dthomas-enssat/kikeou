@@ -1,61 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="generate.GenerateQrCode">
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="information"
+            type="fr.enssat.kikeou.thomas_bricaud.generate.GenerateQrCodeModel" />
+    </data>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="generate.GenerateQrCodeFragment">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="@string/name"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/name" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="@string/email"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="textEmailAddress"
-            android:labelFor="@+id/email" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/phone"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="@string/phone"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="phone"
-            android:labelFor="@+id/phone" />
-    </TableRow>
-</TableLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/name"
+                android:layout_column="0" />
+            <EditText
+                android:id="@+id/label_name"
+                android:layout_width="180dp"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:text="@{information.name}"
+                android:labelFor="@id/name" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/email"
+                android:layout_column="0" />
+            <EditText
+                android:id="@+id/label_email"
+                android:layout_width="180dp"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:inputType="textEmailAddress"
+                android:labelFor="@+id/email" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/phone"
+                android:layout_column="0" />
+            <EditText
+                android:id="@+id/label_phone"
+                android:layout_width="180dp"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:inputType="phone"
+                android:labelFor="@+id/phone" />
+        </TableRow>
+
+    </TableLayout>
+</layout>
