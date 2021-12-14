@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import fr.enssat.kikeou.thomas_bricaud.R
+import java.util.*
 
 /**
  * A simple [Fragment] subclass.
@@ -17,6 +18,8 @@ import fr.enssat.kikeou.thomas_bricaud.R
  * create an instance of this fragment.
  */
 class GenerateQrCode : Fragment(), AdapterView.OnItemSelectedListener {
+    lateinit var spinner: Spinner;
+    lateinit var adapter: ArrayAdapter<String>;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,17 +32,22 @@ class GenerateQrCode : Fragment(), AdapterView.OnItemSelectedListener {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_generate_qr_code, container, false)
         val btnGenerate: Button = v.findViewById(R.id.generate)
-        val spinner: Spinner = v.findViewById(R.id.weekly_spinner)
+
+        // spinner
+        val weeklyArray = arrayListOf<String>();
+        val week: Calendar = Calendar.getInstance()
+        for (i in 0..3) {
+            val weeks = week.get(Calendar.WEEK_OF_YEAR) + i % 52
+            weeklyArray.add(weeks.toString())
+        }
+        adapter = ArrayAdapter(v.context, android.R.layout.simple_spinner_dropdown_item, weeklyArray)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner = v.findViewById(R.id.weekly_spinner)
+        spinner.adapter = adapter
+
+
         btnGenerate.setOnClickListener {
             generate(v)
-        }
-        ArrayAdapter.createFromResource(
-            context!!,
-            R.array.weekly_array,
-            android.R.layout.simple_spinner_item
-        ).also{ adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spinner.adapter = adapter
         }
         return v
     }
