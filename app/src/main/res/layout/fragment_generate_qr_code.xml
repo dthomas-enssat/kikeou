@@ -8,24 +8,40 @@
     tools:context="generate.GenerateQrCode">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/generate_qr_code"
-        android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <include
+        android:id="@+id/include"
         layout="@layout/form_generate_qr_code"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"/>
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <ImageView
+        android:id="@+id/qrCode"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#555555"
+        android:contentDescription="@string/qr_code_image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/share"
+        android:src="@android:drawable/ic_menu_share"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qrCode" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

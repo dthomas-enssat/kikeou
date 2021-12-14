@@ -146,17 +146,13 @@ class CameraActivity : AppCompatActivity() {
                             imageProxy.close()
                         }.addOnSuccessListener { barcodes ->
                             for (barcode in barcodes) {
-                                val bounds = barcode.boundingBox
-                                val corners = barcode.cornerPoints
                                 val rawValue = barcode.rawValue
-                                val valueType = barcode.valueType
 
-                                val text = barcode.displayValue
                                 val element = Draw(this, barcode.boundingBox, rawValue ?: "Undefined")
                                 if(binding.layout.childCount > 1)  {
                                     binding.layout.removeViewAt(1)
                                 }
-                                binding.layout.addView(element,1)
+                                binding.layout.addView(element!!,1)
 
                                 var resultIntent = Intent();
                                 if(rawValue != null) {

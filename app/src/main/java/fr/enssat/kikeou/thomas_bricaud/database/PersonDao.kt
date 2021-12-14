@@ -11,9 +11,12 @@ interface PersonDao {
     @Query("SELECT * FROM person_table")
     fun getPersons(): Flow<List<Person>>
 
+    @Query("SELECT * FROM person_table WHERE name=:name")
+    fun getPerson(name: String) : List<Person>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(person: Person)
+    fun insert(person: Person)
 
     @Query("DELETE FROM person_table")
-    suspend fun deleteAll()
+    fun deleteAll()
 }
