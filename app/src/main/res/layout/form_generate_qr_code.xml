@@ -13,7 +13,7 @@
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="@string/name"
             android:layout_column="0" />
         <EditText
@@ -22,7 +22,6 @@
             android:layout_column="1"
             android:layout_weight="1"
             android:inputType="text"
-            android:hint="@string/name"
             android:labelFor="@+id/name" />
     </TableRow>
     <TableRow
@@ -31,7 +30,7 @@
         <TextView
             android:id="@+id/email"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="@string/email"
             android:layout_column="0" />
         <EditText
@@ -40,7 +39,6 @@
             android:layout_column="1"
             android:layout_weight="1"
             android:inputType="textEmailAddress"
-            android:hint="@string/email"
             android:labelFor="@+id/email" />
     </TableRow>
     <TableRow
@@ -49,7 +47,7 @@
         <TextView
             android:id="@+id/phone"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="@string/phone"
             android:layout_column="0" />
         <EditText
@@ -58,132 +56,6 @@
             android:layout_column="1"
             android:layout_weight="1"
             android:inputType="phone"
-            android:hint="@string/phone"
             android:labelFor="@+id/phone" />
     </TableRow>
-    <TableRow>
-        <TextView
-            android:id="@+id/week"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="S"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_column="0" />
-        <Spinner
-            android:id="@+id/weekly_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="7dp"/>
-        <TextView
-            android:id="@+id/planning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/planning"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/monday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/monday"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/monday"
-            android:hint="@string/morning"/>
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/tuesday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tuesday"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/tuesday"
-            android:hint="@string/tuesday"/>
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/wednesday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/wednesday"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/wednesday"
-            android:hint="@string/wednesday" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/thursday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/thursday"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/thursday"
-            android:hint="@string/thursday" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/friday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/friday"
-            android:layout_column="0" />
-        <EditText
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_weight="1"
-            android:inputType="text"
-            android:labelFor="@+id/friday"
-            android:hint="@string/friday" />
-    </TableRow>
-    <Button
-        android:id="@+id/generate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:text="@string/generate" />
 </TableLayout>
