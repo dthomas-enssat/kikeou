@@ -6,22 +6,14 @@ import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "week_table", foreignKeys = [
-    ForeignKey(entity = Person::class,
-        parentColumns = ["name"],
-        childColumns = ["name"],
-        onDelete = CASCADE
-        )
-])
+@Entity(tableName = "week_table")
 data class Week(@ColumnInfo(name = "num") var num:Int,
                 @ColumnInfo(name = "name") var name:String,
                 @ColumnInfo(name = "day1") var day1:String,
                 @ColumnInfo(name = "day2") var day2:String,
                 @ColumnInfo(name = "day3") var day3:String,
                 @ColumnInfo(name = "day4") var day4:String,
-                @ColumnInfo(name = "day5") var day5:String,
-                @ColumnInfo(name = "day6") var day6:String,
-                @ColumnInfo(name = "day7") var day7:String,
+                @ColumnInfo(name = "day5") var day5:String
                 ){
     @PrimaryKey(autoGenerate = true)
     private var id:Int =0

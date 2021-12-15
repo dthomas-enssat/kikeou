@@ -39,6 +39,7 @@ abstract class PersonRoomDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: PersonRoomDatabase? = null
 
+
         fun getDatabase(
             context: Context,
             scope: CoroutineScope
@@ -47,13 +48,14 @@ abstract class PersonRoomDatabase : RoomDatabase() {
             // if it is, then create the database
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext,
+                    context,
                     PersonRoomDatabase::class.java,
                     "person_database"
                 )
                     // Wipes and rebuilds instead of migrating if no Migration object.
                     // Migration is not part of this codelab.
                     .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
                     .addCallback(WordDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance
@@ -84,7 +86,7 @@ abstract class PersonRoomDatabase : RoomDatabase() {
          * Populate the database in a new coroutine.
          * If you want to start with more words, just add them.
          */
-        suspend fun populateDatabase(personDao: PersonDao, weekDao: WeekDao) {
+        fun populateDatabase(personDao: PersonDao, weekDao: WeekDao) {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
             personDao.deleteAll()
@@ -95,19 +97,17 @@ abstract class PersonRoomDatabase : RoomDatabase() {
             person = Person("Dorian!", null, Contact("dbricaud@enssat.fr", null, null))
             personDao.insert(person)
 
-            var day1 = "here"
-            var day2 = "there"
-            var day3 = "home"
-            var day4 = "office"
-            var day5 = "somewhere"
-            var day6 = "week end"
-            var day7 = "week end"
+            val day1 = "here"
+            val day2 = "there"
+            val day3 = "home"
+            val day4 = "office"
+            val day5 = "somewhere"
 
 
-            var week = Week(1, "David", day1, day2, day3, day4, day5, day6, day7)
+            var week = Week(1, "David", day1, day2, day3, day4, day5)
             weekDao.insert(week)
 
-            week = Week(1, "Dorian", day1, day2, day3, day4, day5, day6, day7)
+            week = Week(1, "Dorian", day1, day2, day3, day4, day5)
             weekDao.insert(week)
         }
     }
