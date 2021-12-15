@@ -19,4 +19,7 @@ interface PersonDao {
 
     @Query("DELETE FROM person_table")
     fun deleteAll()
+
+    @Query("DELETE FROM person_table WHERE name=:name")
+    fun delete(name: String)
 }

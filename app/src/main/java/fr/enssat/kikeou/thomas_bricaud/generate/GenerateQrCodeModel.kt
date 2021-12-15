@@ -29,6 +29,8 @@ class GenerateQrCodeModel(
     var thursday    = String()
     var friday      = String()
     var saturday    = String()
+
+    // database
     var personRepository : PersonRepository
     var weekRepository : WeekRepository
 

@@ -23,4 +23,8 @@ class WeekRepository(private val weekDao: WeekDao) {
     fun deleteAll() {
         return weekDao.deleteAll()
     }
+
+    fun delete(num: Int, name: String) {
+        return weekDao.delete(num, name)
+    }
 }

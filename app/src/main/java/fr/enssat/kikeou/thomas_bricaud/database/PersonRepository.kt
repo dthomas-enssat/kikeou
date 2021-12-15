@@ -20,4 +20,8 @@ class PersonRepository (private val personDao: PersonDao){
         return personDao.deleteAll()
     }
 
+    fun delete(name: String) {
+        return personDao.delete(name)
+    }
+
 }

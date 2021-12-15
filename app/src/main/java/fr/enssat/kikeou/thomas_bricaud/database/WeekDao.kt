@@ -19,4 +19,7 @@ interface WeekDao {
 
     @Query("DELETE FROM week_table")
     fun deleteAll()
+
+    @Query("DELETE FROM week_table WHERE num=:num AND name=:name")
+    fun delete(num: Int, name: String)
 }

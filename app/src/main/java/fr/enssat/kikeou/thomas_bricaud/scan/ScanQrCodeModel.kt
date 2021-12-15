@@ -1,6 +1,8 @@
 package fr.enssat.kikeou.thomas_bricaud.scan
 
 import androidx.lifecycle.ViewModel
+import fr.enssat.kikeou.thomas_bricaud.database.PersonRepository
+import fr.enssat.kikeou.thomas_bricaud.database.WeekRepository
 
 class ScanQrCodeModel(
     name: String,
@@ -12,6 +14,8 @@ class ScanQrCodeModel(
     thursday: String,
     friday: String,
     saturday: String,
+    personRepository: PersonRepository,
+    weekRepository: WeekRepository
 ) : ViewModel() {
     // personnal information
     var name    = String()
@@ -26,6 +30,10 @@ class ScanQrCodeModel(
     var friday      = String()
     var saturday    = String()
 
+    // database
+    var personRepository : PersonRepository
+    var weekRepository : WeekRepository
+
     // init view
     init {
         this.name       = name
@@ -37,6 +45,8 @@ class ScanQrCodeModel(
         this.thursday   = thursday
         this.friday     = friday
         this.saturday   = saturday
+        this.personRepository = personRepository
+        this.weekRepository = weekRepository
     }
 
     override fun onCleared() {
