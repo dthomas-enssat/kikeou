@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/scanQrCode"
-        android:name="fr.enssat.kikeou.thomas_bricaud.scan.ScanQrCode"
+        android:name="fr.enssat.kikeou.thomas_bricaud.scan.ScanQrCodeFragment"
         android:label="fragment_scan_qr_code"
         tools:layout="@layout/fragment_scan_qr_code" />
 

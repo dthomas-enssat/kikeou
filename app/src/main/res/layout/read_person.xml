@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
             name="information"
@@ -16,13 +15,15 @@
             android:layout_height="match_parent">
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@integer/default_height"
+                android:gravity="center"
                 android:text="@string/name"
                 android:layout_column="0" />
             <TextView
                 android:id="@+id/name"
-                android:layout_width="180dp"
-                android:layout_height="50dp"
+                android:layout_width="@integer/default_width"
+                android:layout_height="@integer/default_height"
+                android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1" />
         </TableRow>
@@ -32,13 +33,15 @@
             android:layout_height="match_parent">
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@integer/default_height"
+                android:gravity="center"
                 android:text="@string/email"
                 android:layout_column="0" />
             <TextView
                 android:id="@+id/email"
-                android:layout_width="180dp"
-                android:layout_height="50dp"
+                android:layout_width="@integer/default_width"
+                android:layout_height="@integer/default_height"
+                android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1" />
         </TableRow>
@@ -49,13 +52,15 @@
             <TextView
                 android:id="@+id/label_phone"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@integer/default_height"
+                android:gravity="center"
                 android:text="@string/phone"
                 android:layout_column="0" />
             <TextView
                 android:id="@+id/phone"
-                android:layout_width="180dp"
-                android:layout_height="50dp"
+                android:layout_width="@integer/default_width"
+                android:layout_height="@integer/default_height"
+                android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1"/>
         </TableRow>
