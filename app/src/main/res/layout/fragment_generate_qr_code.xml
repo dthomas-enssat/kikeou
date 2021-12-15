@@ -34,7 +34,7 @@
                 android:orientation="horizontal">
                 <include
                     android:id="@+id/person"
-                    layout="@layout/form_generate_qr_code"
+                    layout="@layout/form_person"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
             </LinearLayout>
@@ -46,7 +46,7 @@
                 android:orientation="horizontal">
                 <include
                     android:id="@+id/banner"
-                    layout="@layout/form_calendar_weekly"
+                    layout="@layout/form_banner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
             </LinearLayout>
@@ -73,7 +73,7 @@
 
                 <Button
                     android:id="@+id/generate"
-                    android:layout_width="300dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/generate"/>
                 <LinearLayout

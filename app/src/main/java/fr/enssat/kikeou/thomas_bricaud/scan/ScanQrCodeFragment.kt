@@ -9,10 +9,10 @@ import fr.enssat.kikeou.thomas_bricaud.R
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ScanQrCode.newInstance] factory method to
+ * Use the [ScanQrCodeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ScanQrCode : Fragment() {
+class ScanQrCodeFragment : Fragment() {
 
     private val contract = CameraActivityContract()
     private val getQrCode = registerForActivityResult(contract) { json: String? ->
@@ -45,6 +45,6 @@ class ScanQrCode : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance() = ScanQrCode().apply {}
+        fun newInstance() = ScanQrCodeFragment().apply {}
     }
 }

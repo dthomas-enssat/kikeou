@@ -1,15 +1,15 @@
 <resources>
+    <!-- Default -->
     <string name="app_name">KikeOu</string>
     <string name="qr_code_image">Image QR Code</string>
     <string name="share">Partager</string>
-    <string name="permissionToGrant">Camera</string>
 
     <!-- NavBar -->
     <string name="search">Rechercher</string>
     <string name="generate_qr_code">Ajouter</string>
     <string name="scan_qr_code">Scanner</string>
 
-    <!-- Form (generate) -->
+    <!-- Generate -->
     <string name="name">Nom</string>
     <string name="email">E-mail</string>
     <string name="phone">Téléphone</string>
@@ -22,11 +22,17 @@
     <string name="saturday">Samedi</string>
     <string name="generate">Générer QR code</string>
 
-    <!-- Form (search and week) -->
+    <!-- Search -->
+    <string name="permissionToGrant">Camera</string>
     <string name="key">Veuillez saisir un mot de recherche</string>
+
+    <!-- Scan -->
+    <string name="scan_again">Scanner un nouveau QR code</string>
+
+    <!-- Banner -->
     <string name="week">S</string>
 
-    <!-- Layout (Camera) -->
+    <!-- Camera -->
     <string name="close_fragment">Close Fragment</string>
 
     <string name="quote_format">\"%s\"</string>
