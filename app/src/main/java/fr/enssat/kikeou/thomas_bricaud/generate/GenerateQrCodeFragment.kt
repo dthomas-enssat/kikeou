@@ -1,12 +1,11 @@
 package fr.enssat.kikeou.thomas_bricaud.generate
 
 import android.content.ContentValues
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.text.Editable
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,15 +13,18 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Spinner
-import androidx.core.view.get
 import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
 import fr.enssat.kikeou.thomas_bricaud.KikeouApplication
 import fr.enssat.kikeou.thomas_bricaud.MainActivity
 import fr.enssat.kikeou.thomas_bricaud.R
 import fr.enssat.kikeou.thomas_bricaud.database.*
 import fr.enssat.kikeou.thomas_bricaud.databinding.FragmentGenerateQrCodeBinding
+import fr.enssat.kikeou.thomas_bricaud.json.JsonObject
 import net.glxn.qrgen.android.QRCode
 import java.util.*
 
@@ -33,8 +35,8 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var viewModelFactory: GenerateQrCodeModelFactory
 
     // element in the fragment
-    private lateinit var spinner: Spinner;
-    private lateinit var adapter: ArrayAdapter<String>;
+    private lateinit var spinner: Spinner
+    private lateinit var adapter: ArrayAdapter<String>
 
     // qr_code parameters
     private val NO_COMPRESSION = 100
@@ -48,7 +50,7 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // inflate the layout for this fragment
         binding = FragmentGenerateQrCodeBinding.inflate(inflater, container, false)
 
@@ -93,11 +95,11 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.week.saturday.doAfterTextChanged { viewModel.saturday = it.toString() }
 
         // spinner
-        val weeklyArray = arrayListOf<String>();
+        val weeklyArray = arrayListOf<String>()
         val week: Calendar = Calendar.getInstance()
         for (i in 0..3) {
             var weeks = (week.get(Calendar.WEEK_OF_YEAR) + i) % 52
-            if (weeks == 0) weeks = 52;
+            if (weeks == 0) weeks = 52
             weeklyArray.add(weeks.toString())
         }
         adapter = ArrayAdapter(binding.root.context, android.R.layout.simple_spinner_dropdown_item, weeklyArray)
@@ -120,29 +122,32 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private fun generate(v: View) {
 
         val num = binding.banner.spinner.selectedItem.toString().toInt()
-        val name = binding.person.name.toString()
-        val mail = binding.person.email.toString()
-        val tel = binding.person.phone.toString()
-        val day1 = binding.week.monday.toString()
-        val day2 = binding.week.tuesday.toString()
-        val day3 = binding.week.wednesday.toString()
-        val day4 = binding.week.thursday.toString()
-        val day5 = binding.week.friday.toString()
-        val day6 = binding.week.saturday.toString()
+        val name = binding.person.name.text.toString()
+        val mail = binding.person.email.text.toString()
+        val tel = binding.person.phone.text.toString()
+        val day1 = binding.week.monday.text.toString()
+        val day2 = binding.week.tuesday.text.toString()
+        val day3 = binding.week.wednesday.text.toString()
+        val day4 = binding.week.thursday.text.toString()
+        val day5 = binding.week.friday.text.toString()
+        val day6 = binding.week.saturday.text.toString()
 
 
         val persons = personRepository.getPerson(name)
+        var person: Person?
         if (persons.isEmpty()) {
-            val person = Person(name, null, Contact(mail, tel, null))
+            person = Person(name, null, Contact(mail, tel, null))
             personRepository.insert(person)
+        } else {
+            person = persons[0]
         }
         val weeks = weekRepository.getWeek(num, name)
-
+        var week : Week?
         if (weeks.isEmpty()) {
-            val week = Week(num, name, day1, day2, day3, day4, day5, day6)
+            week = Week(num, name, day1, day2, day3, day4, day5, day6)
             weekRepository.insert(week)
         } else {
-            val week = weeks[0]
+            week = weeks[0]
             week.day1 = day1
             week.day2 = day2
             week.day3 = day3
@@ -152,7 +157,13 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
             weekRepository.updateWeek(week)
         }
 
-        var json = "{Test: Test}"
+        val jsonObject = JsonObject(person, week)
+
+        val moshi: Moshi = Moshi.Builder().build()
+        val jsonAdapter: JsonAdapter<JsonObject> = moshi.adapter(JsonObject::class.java)
+
+        val json: String = jsonAdapter.toJson(jsonObject)
+
         val qrCodeView = v.findViewById<ImageView>(R.id.qr_code)
         val share = v.findViewById<FloatingActionButton>(R.id.sharing_qr_code)
 
@@ -168,12 +179,18 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 MediaStore.MediaColumns.RELATIVE_PATH,
                 Environment.DIRECTORY_DOCUMENTS.toString() + "/Kikeou/"
             )
-            var uri = context!!.contentResolver.insert(MediaStore.Files.getContentUri("external"), values)
+            val uri = context!!.contentResolver.insert(MediaStore.Files.getContentUri("external"), values)
             val out = uri?.let { context!!.contentResolver.openOutputStream(it) }
             bitmap.compress(Bitmap.CompressFormat.PNG, NO_COMPRESSION, out)
             out?.flush()
             out?.close()
-            share.visibility = View.VISIBLE
+
+            binding.sharingQrCode.setOnClickListener { _ ->
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.type = "image/png"
+                intent.putExtra(Intent.EXTRA_STREAM, uri)
+                startActivity(Intent.createChooser(intent, "Share Image"))
+            }
 
         } catch (e: Exception) {
             e.printStackTrace()
