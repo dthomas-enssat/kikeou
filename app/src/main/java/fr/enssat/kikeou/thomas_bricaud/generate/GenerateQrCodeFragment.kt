@@ -65,19 +65,21 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
             binding.person.name.text.toString(),
             binding.person.email.text.toString(),
             binding.person.phone.text.toString(),
-            binding.week.monday.toString(),
-            binding.week.tuesday.toString(),
-            binding.week.wednesday.toString(),
-            binding.week.thursday.toString(),
-            binding.week.friday.toString(),
-            binding.week.saturday.toString(),
+            binding.week.monday.text.toString(),
+            binding.week.tuesday.text.toString(),
+            binding.week.wednesday.text.toString(),
+            binding.week.thursday.text.toString(),
+            binding.week.friday.text.toString(),
+            binding.week.saturday.text.toString(),
         )
         viewModel = ViewModelProvider(this, viewModelFactory).get(GenerateQrCodeModel::class.java)
         binding.lifecycleOwner = viewLifecycleOwner
+
         // setter on initialization
         binding.person.name.setText(viewModel.name)
         binding.person.email.setText(viewModel.email)
         binding.person.phone.setText(viewModel.phone)
+
         binding.week.monday.setText(viewModel.monday)
         binding.week.tuesday.setText(viewModel.tuesday)
         binding.week.wednesday.setText(viewModel.wednesday)
@@ -89,6 +91,7 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.person.name.doAfterTextChanged { viewModel.name = it.toString() }
         binding.person.email.doAfterTextChanged { viewModel.email = it.toString() }
         binding.person.phone.doAfterTextChanged { viewModel.phone = it.toString() }
+
         binding.week.monday.doAfterTextChanged { viewModel.monday = it.toString() }
         binding.week.tuesday.doAfterTextChanged { viewModel.tuesday = it.toString() }
         binding.week.wednesday.doAfterTextChanged { viewModel.wednesday = it.toString() }
