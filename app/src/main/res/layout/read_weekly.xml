@@ -18,14 +18,14 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:text="@string/monday"
                 android:gravity="center"/>
 
             <TextView
                 android:id="@+id/monday"
                 android:layout_width="0dp"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
@@ -38,14 +38,14 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:text="@string/tuesday"
                 android:gravity="center"/>
 
             <TextView
                 android:id="@+id/tuesday"
                 android:layout_width="0dp"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
@@ -58,14 +58,14 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:text="@string/wednesday"
                 android:gravity="center"/>
 
             <TextView
                 android:id="@+id/wednesday"
                 android:layout_width="0dp"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
@@ -78,14 +78,14 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:text="@string/thursday"
                 android:gravity="center"/>
 
             <TextView
                 android:id="@+id/thursday"
                 android:layout_width="0dp"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
@@ -98,14 +98,14 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:text="@string/friday"
                 android:gravity="center"/>
 
             <TextView
                 android:id="@+id/friday"
                 android:layout_width="0dp"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
@@ -118,14 +118,14 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:text="@string/saturday"
                 android:gravity="center"/>
 
             <TextView
                 android:id="@+id/saturday"
                 android:layout_width="0dp"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
