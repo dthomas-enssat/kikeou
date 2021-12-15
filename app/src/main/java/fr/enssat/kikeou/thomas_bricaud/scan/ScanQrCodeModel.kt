@@ -1,8 +1,8 @@
-package fr.enssat.kikeou.thomas_bricaud.generate
+package fr.enssat.kikeou.thomas_bricaud.scan
 
 import androidx.lifecycle.ViewModel
 
-class GenerateQrCodeModel(
+class ScanQrCodeModel(
     name: String,
     email: String,
     phone: String,

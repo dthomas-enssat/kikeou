@@ -41,6 +41,42 @@
                     android:text="@string/scan_again"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@integer/default_margin"
+                android:weightSum="1"
+                android:orientation="horizontal">
+                <include
+                    android:id="@+id/person"
+                    layout="@layout/read_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <include
+                    android:id="@+id/banner"
+                    layout="@layout/form_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:orientation="horizontal">
+                <include
+                    android:id="@+id/week"
+                    layout="@layout/read_weekly"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </layout>
