@@ -5,11 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class GenerateQrCodeModel(name: String) : ViewModel() {
-    private val _name = MutableLiveData<String>()
-    val name: LiveData<String>
-        get() = _name
+    var name = String()
 
     init {
-        _name.value = name
+        this.name = name
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+
     }
 }
