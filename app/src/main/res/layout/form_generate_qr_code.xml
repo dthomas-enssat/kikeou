@@ -34,36 +34,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/label_email"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="@string/email"
                 android:layout_column="0" />
             <EditText
-                android:id="@+id/label_email"
+                android:id="@+id/email"
                 android:layout_width="180dp"
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:inputType="textEmailAddress"
-                android:labelFor="@+id/email" />
+                android:labelFor="@+id/label_email" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
-                android:id="@+id/phone"
+                android:id="@+id/label_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="@string/phone"
                 android:layout_column="0" />
             <EditText
-                android:id="@+id/label_phone"
+                android:id="@+id/phone"
                 android:layout_width="180dp"
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:inputType="phone"
-                android:labelFor="@+id/phone" />
+                android:labelFor="@+id/label_phone" />
         </TableRow>
 
     </TableLayout>
