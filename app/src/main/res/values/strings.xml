@@ -13,19 +13,21 @@
     <string name="name">Nom</string>
     <string name="email">E-mail</string>
     <string name="phone">Téléphone</string>
-    <string name="planning">Calendrier hebdomadaire</string>
+    <string name="planning">Calendrier</string>
     <string name="monday">Lundi</string>
     <string name="tuesday">Mardi</string>
     <string name="wednesday">Mercredi</string>
     <string name="thursday">Jeudi</string>
     <string name="friday">Vendredi</string>
-    <string name="morning">Matin</string>
-    <string name="afternoon">Après-midi</string>
+    <string name="saturday">Samedi</string>
     <string name="generate">Générer QR code</string>
 
-    <!-- Form (search) -->
+    <!-- Form (search and week) -->
     <string name="key">Veuillez saisir un mot de recherche</string>
+    <string name="week">S</string>
 
     <!-- Layout (Camera) -->
     <string name="close_fragment">Close Fragment</string>
+
+    <string name="quote_format">\"%s\"</string>
 </resources>

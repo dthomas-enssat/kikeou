@@ -14,7 +14,6 @@ import fr.enssat.kikeou.thomas_bricaud.database.WeekRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
-
 class MainActivity : AppCompatActivity() {
 
     private val applicationScope = CoroutineScope(SupervisorJob())

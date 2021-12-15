@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/generateQrCode"
-        android:name="fr.enssat.kikeou.thomas_bricaud.generate.GenerateQrCode"
+        android:name="fr.enssat.kikeou.thomas_bricaud.generate.GenerateQrCodeFragment"
         android:label="fragment_generate_qr_code"
         tools:layout="@layout/fragment_generate_qr_code" />
 
