@@ -14,24 +14,24 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="@integer/default_height"
+            android:layout_height="@string/default_height"
             android:gravity="center"
             android:text="@string/planning"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="@integer/default_height"
+            android:layout_height="@string/default_height"
             android:gravity="center"
-            android:layout_marginStart="@integer/default_margin"
+            android:layout_marginStart="@string/default_margin"
             android:text="@string/week"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="@integer/default_width"
-            android:layout_height="@integer/default_height"
+            android:layout_width="@string/default_width"
+            android:layout_height="@string/default_height"
             app:layout_constraintStart_toEndOf="@+id/week"
             app:layout_constraintTop_toTopOf="parent" />
 

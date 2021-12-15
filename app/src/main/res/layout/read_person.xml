@@ -15,14 +15,14 @@
             android:layout_height="match_parent">
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:gravity="center"
                 android:text="@string/name"
                 android:layout_column="0" />
             <TextView
                 android:id="@+id/name"
-                android:layout_width="@integer/default_width"
-                android:layout_height="@integer/default_height"
+                android:layout_width="@string/default_width"
+                android:layout_height="@string/default_height"
                 android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1" />
@@ -33,14 +33,14 @@
             android:layout_height="match_parent">
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:gravity="center"
                 android:text="@string/email"
                 android:layout_column="0" />
             <TextView
                 android:id="@+id/email"
-                android:layout_width="@integer/default_width"
-                android:layout_height="@integer/default_height"
+                android:layout_width="@string/default_width"
+                android:layout_height="@string/default_height"
                 android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1" />
@@ -52,14 +52,14 @@
             <TextView
                 android:id="@+id/label_phone"
                 android:layout_width="wrap_content"
-                android:layout_height="@integer/default_height"
+                android:layout_height="@string/default_height"
                 android:gravity="center"
                 android:text="@string/phone"
                 android:layout_column="0" />
             <TextView
                 android:id="@+id/phone"
-                android:layout_width="@integer/default_width"
-                android:layout_height="@integer/default_height"
+                android:layout_width="@string/default_width"
+                android:layout_height="@string/default_height"
                 android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1"/>
