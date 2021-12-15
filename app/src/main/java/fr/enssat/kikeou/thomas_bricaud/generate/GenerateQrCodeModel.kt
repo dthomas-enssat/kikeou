@@ -3,6 +3,8 @@ package fr.enssat.kikeou.thomas_bricaud.generate
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import fr.enssat.kikeou.thomas_bricaud.database.PersonRepository
+import fr.enssat.kikeou.thomas_bricaud.database.WeekRepository
 
 class GenerateQrCodeModel(
     name: String,
@@ -14,6 +16,8 @@ class GenerateQrCodeModel(
     thursday: String,
     friday: String,
     saturday: String,
+    personRepository: PersonRepository,
+    weekRepository: WeekRepository
 ) : ViewModel() {
     // personnal information
     var name    = String()
@@ -27,6 +31,8 @@ class GenerateQrCodeModel(
     var thursday    = String()
     var friday      = String()
     var saturday    = String()
+    var personRepository : PersonRepository
+    var weekRepository : WeekRepository
 
     // init view
     init {
@@ -39,9 +45,7 @@ class GenerateQrCodeModel(
         this.thursday   = thursday
         this.friday     = friday
         this.saturday   = saturday
-    }
-
-    override fun onCleared() {
-        super.onCleared()
+        this.personRepository = personRepository
+        this.weekRepository = weekRepository
     }
 }

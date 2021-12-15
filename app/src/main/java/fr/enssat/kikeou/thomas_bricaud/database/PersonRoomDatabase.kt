@@ -48,7 +48,7 @@ abstract class PersonRoomDatabase : RoomDatabase() {
             // if it is, then create the database
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context,
+                    context.applicationContext,
                     PersonRoomDatabase::class.java,
                     "person_database"
                 )
@@ -102,12 +102,12 @@ abstract class PersonRoomDatabase : RoomDatabase() {
             val day3 = "home"
             val day4 = "office"
             val day5 = "somewhere"
+            val day6 = "somewhere"
 
-
-            var week = Week(1, "David", day1, day2, day3, day4, day5)
+            var week = Week(1, "David", day1, day2, day3, day4, day5, day6)
             weekDao.insert(week)
 
-            week = Week(1, "Dorian", day1, day2, day3, day4, day5)
+            week = Week(1, "Dorian", day1, day2, day3, day4, day5, day6)
             weekDao.insert(week)
         }
     }

@@ -18,6 +18,7 @@ import androidx.core.view.get
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import fr.enssat.kikeou.thomas_bricaud.KikeouApplication
 import fr.enssat.kikeou.thomas_bricaud.MainActivity
 import fr.enssat.kikeou.thomas_bricaud.R
 import fr.enssat.kikeou.thomas_bricaud.database.*
@@ -43,15 +44,6 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var personRepository: PersonRepository
     private lateinit var weekRepository: WeekRepository
 
-    // initialise database
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        if (context != null) {
-            personRepository = (context as MainActivity).personRepository
-            weekRepository = (context as MainActivity).weekRepository
-        }
-    }
-
     // generate view
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,6 +54,7 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         // integrate viewmodel for databinding
         viewModelFactory = GenerateQrCodeModelFactory(
+            ((context as MainActivity).application as KikeouApplication),
             binding.person.name.text.toString(),
             binding.person.email.text.toString(),
             binding.person.phone.text.toString(),
@@ -112,6 +105,9 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         spinner = binding.banner.spinner
         spinner.adapter = adapter
 
+        personRepository = viewModel.personRepository
+        weekRepository = viewModel.weekRepository
+
         // generate qr code button
         binding.generate.setOnClickListener {
             generate(binding.root)
@@ -143,7 +139,7 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val weeks = weekRepository.getWeek(num, name)
 
         if (weeks.isEmpty()) {
-            val week = Week(num, name, day1, day2, day3, day4, day5)
+            val week = Week(num, name, day1, day2, day3, day4, day5, day6)
             weekRepository.insert(week)
         } else {
             val week = weeks[0]

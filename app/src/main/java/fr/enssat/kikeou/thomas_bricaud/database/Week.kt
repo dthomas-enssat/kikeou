@@ -13,7 +13,8 @@ data class Week(@ColumnInfo(name = "num") var num:Int,
                 @ColumnInfo(name = "day2") var day2:String,
                 @ColumnInfo(name = "day3") var day3:String,
                 @ColumnInfo(name = "day4") var day4:String,
-                @ColumnInfo(name = "day5") var day5:String
+                @ColumnInfo(name = "day5") var day5:String,
+                @ColumnInfo(name = "day6") var day6:String
                 ){
     @PrimaryKey(autoGenerate = true)
     private var id:Int =0

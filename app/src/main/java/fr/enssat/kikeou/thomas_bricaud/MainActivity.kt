@@ -16,18 +16,9 @@ import kotlinx.coroutines.SupervisorJob
 
 class MainActivity : AppCompatActivity() {
 
-    private val applicationScope = CoroutineScope(SupervisorJob())
-    private lateinit var database : PersonRoomDatabase
-    lateinit var weekRepository : WeekRepository
-    lateinit var personRepository : PersonRepository
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        database = PersonRoomDatabase.getDatabase(this, applicationScope)
-        weekRepository = WeekRepository(database.weekDao())
-        personRepository = PersonRepository(database.personDao())
 
         // initialize
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
