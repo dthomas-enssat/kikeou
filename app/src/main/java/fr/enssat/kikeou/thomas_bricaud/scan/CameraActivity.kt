@@ -148,11 +148,11 @@ class CameraActivity : AppCompatActivity() {
                             for (barcode in barcodes) {
                                 val rawValue = barcode.rawValue
 
-                                val element = Draw(this, barcode.boundingBox, rawValue ?: "Undefined")
+                                val element = Draw(this, barcode.boundingBox!!, rawValue ?: "Undefined")
                                 if(binding.layout.childCount > 1)  {
                                     binding.layout.removeViewAt(1)
                                 }
-                                binding.layout.addView(element!!,1)
+                                binding.layout.addView(element,1)
 
                                 var resultIntent = Intent();
                                 if(rawValue != null) {
