@@ -165,7 +165,6 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val json: String = jsonAdapter.toJson(jsonObject)
 
         val qrCodeView = v.findViewById<ImageView>(R.id.qr_code)
-        val share = v.findViewById<FloatingActionButton>(R.id.sharing_qr_code)
 
         val bitmap = QRCode.from(json).withSize(500,500).withCharset("UTF-8").bitmap()
         qrCodeView.setImageBitmap(bitmap)

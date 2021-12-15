@@ -13,7 +13,7 @@ class ScanQrCodeModelFactory (
     private val wednesday: String,
     private val thursday: String,
     private val friday: String,
-    private val saturday: String,
+    private val saturday: String
 ): ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ScanQrCodeModel::class.java)) {
