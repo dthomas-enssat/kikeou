@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="integer" name="zero">0</item>
+    <item type="integer" name="default_margin">20</item>
+    <item type="integer" name="default_space">40</item>
+    <item type="integer" name="default_height">50</item>
+    <item type="integer" name="default_width">100</item>
+    <item type="integer" name="default_qrcode">100</item>
+    <item type="integer" name="default_title">30</item>
+</resources>
