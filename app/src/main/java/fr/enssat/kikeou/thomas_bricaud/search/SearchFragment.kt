@@ -13,15 +13,11 @@ import fr.enssat.kikeou.thomas_bricaud.R
 import fr.enssat.kikeou.thomas_bricaud.databinding.FragmentSearchBinding
 import java.util.*
 
-class SearchFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class SearchFragment : Fragment() {
     //binding information
     private lateinit var binding: FragmentSearchBinding
     private lateinit var viewModel: SearchModel
     private lateinit var viewModelFactory: SearchModelFactory
-
-    // element in the fragment
-    private lateinit var spinner: Spinner;
-    private lateinit var adapter: ArrayAdapter<String>;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +27,7 @@ class SearchFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding = FragmentSearchBinding.inflate(inflater, container, false)
 
         // integrate viewmodel for databinding
-        viewModelFactory = SearchModelFactory("", "", "", "", "", "", "", "", "")
+        viewModelFactory = SearchModelFactory("", "", "", "", "", "", "", "", "", "")
         viewModel = ViewModelProvider(this, viewModelFactory).get(SearchModel::class.java)
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -40,6 +36,7 @@ class SearchFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.person.email.text = viewModel.email
         binding.person.phone.text = viewModel.phone
 
+        binding.banner.spinner.text = viewModel.week
         binding.week.monday.text = viewModel.monday
         binding.week.tuesday.text = viewModel.tuesday
         binding.week.wednesday.text = viewModel.wednesday
@@ -47,29 +44,6 @@ class SearchFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.week.friday.text = viewModel.friday
         binding.week.saturday.text = viewModel.saturday
 
-        // spinner
-        val weeklyArray = arrayListOf<String>();
-        val week: Calendar = Calendar.getInstance()
-        for (i in 0..3) {
-            var weeks = (week.get(Calendar.WEEK_OF_YEAR) + i) % 52
-            if (weeks == 0) weeks = 52;
-            weeklyArray.add(weeks.toString())
-        }
-        adapter = ArrayAdapter(binding.root.context, android.R.layout.simple_spinner_dropdown_item, weeklyArray)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner = binding.banner.spinner
-        spinner.adapter = adapter
-
-
         return binding.root
-    }
-
-    // for spinner element
-    override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
-        val spinner: Spinner = parent.findViewById(R.id.spinner)
-        spinner.onItemSelectedListener = this
-    }
-
-    override fun onNothingSelected(parent: AdapterView<*>) {
     }
 }

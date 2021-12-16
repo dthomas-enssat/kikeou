@@ -8,6 +8,7 @@ class ScanQrCodeModel(
     name: String,
     email: String,
     phone: String,
+    week: String,
     monday: String,
     tuesday: String,
     wednesday: String,
@@ -23,6 +24,7 @@ class ScanQrCodeModel(
     var phone   = String()
 
     // actual week information
+    var week        = String()
     var monday      = String()
     var tuesday     = String()
     var wednesday   = String()
@@ -39,6 +41,7 @@ class ScanQrCodeModel(
         this.name       = name
         this.email      = email
         this.phone      = phone
+        this.week       = week
         this.monday     = monday
         this.tuesday    = tuesday
         this.wednesday  = wednesday
