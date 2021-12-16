@@ -1,10 +1,8 @@
 package fr.enssat.kikeou.thomas_bricaud.database
 
-import kotlinx.coroutines.flow.Flow
-
 class PersonRepository (private val personDao: PersonDao){
 
-    fun getPersons(): Flow<List<Person>> {
+    fun getPersons(): List<Person> {
         return personDao.getPersons()
     }
 

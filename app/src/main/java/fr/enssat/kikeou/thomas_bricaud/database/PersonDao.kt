@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PersonDao {
     @Query("SELECT * FROM person_table")
-    fun getPersons(): Flow<List<Person>>
+    fun getPersons(): List<Person>
 
     @Query("SELECT * FROM person_table WHERE name=:name")
     fun getPerson(name: String) : List<Person>

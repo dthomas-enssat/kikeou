@@ -1,6 +1,8 @@
 package fr.enssat.kikeou.thomas_bricaud.search
 
 import androidx.lifecycle.ViewModel
+import fr.enssat.kikeou.thomas_bricaud.database.PersonRepository
+import fr.enssat.kikeou.thomas_bricaud.database.WeekRepository
 
 class SearchModel(
     name: String,
@@ -13,6 +15,8 @@ class SearchModel(
     thursday: String,
     friday: String,
     saturday: String,
+    personRepository: PersonRepository,
+    weekRepository: WeekRepository
 ) : ViewModel() {
     // personnal information
     var name    = String()
@@ -28,6 +32,9 @@ class SearchModel(
     var friday      = String()
     var saturday    = String()
 
+    lateinit var personRepository : PersonRepository
+    lateinit var weekRepository: WeekRepository
+
     // init view
     init {
         this.name       = name
@@ -40,6 +47,8 @@ class SearchModel(
         this.thursday   = thursday
         this.friday     = friday
         this.saturday   = saturday
+        this.personRepository = personRepository
+        this.weekRepository = weekRepository
     }
 
     override fun onCleared() {

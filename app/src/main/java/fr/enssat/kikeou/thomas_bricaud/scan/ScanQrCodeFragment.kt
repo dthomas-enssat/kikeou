@@ -61,6 +61,8 @@ class ScanQrCodeFragment : Fragment() {
                 binding.person.email.text = person.contact.mail
                 binding.person.phone.text = person.contact.tel
 
+                binding.banner.spinner.text = week.num.toString();
+
                 binding.week.monday.text = week.day1
                 binding.week.tuesday.text = week.day2
                 binding.week.wednesday.text = week.day3
