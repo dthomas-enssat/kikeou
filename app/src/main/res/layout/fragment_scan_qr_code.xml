@@ -61,7 +61,7 @@
                 android:orientation="horizontal">
                 <include
                     android:id="@+id/banner"
-                    layout="@layout/form_banner"
+                    layout="@layout/read_banner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
             </LinearLayout>

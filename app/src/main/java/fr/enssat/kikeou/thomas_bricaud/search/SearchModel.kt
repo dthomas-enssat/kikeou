@@ -6,6 +6,7 @@ class SearchModel(
     name: String,
     email: String,
     phone: String,
+    week: String,
     monday: String,
     tuesday: String,
     wednesday: String,
@@ -19,6 +20,7 @@ class SearchModel(
     var phone   = String()
 
     // actual week information
+    var week        = String()
     var monday      = String()
     var tuesday     = String()
     var wednesday   = String()
@@ -31,6 +33,7 @@ class SearchModel(
         this.name       = name
         this.email      = email
         this.phone      = phone
+        this.week       = week
         this.monday     = monday
         this.tuesday    = tuesday
         this.wednesday  = wednesday

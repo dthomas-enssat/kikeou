@@ -8,6 +8,7 @@ class SearchModelFactory (
     private val name: String,
     private val email: String,
     private val phone: String,
+    private val week: String,
     private val monday: String,
     private val tuesday: String,
     private val wednesday: String,
@@ -18,7 +19,7 @@ class SearchModelFactory (
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SearchModel::class.java)) {
             return SearchModel(
-                name, email, phone, monday, tuesday, wednesday, thursday, friday, saturday
+                name, email, phone, week, monday, tuesday, wednesday, thursday, friday, saturday
             ) as T
         }
         throw IllegalArgumentException("Unknow ViewModel Class")

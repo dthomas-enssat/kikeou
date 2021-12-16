@@ -18,10 +18,6 @@ class ScanQrCodeFragment : Fragment() {
     private lateinit var viewModel: ScanQrCodeModel
     private lateinit var viewModelFactory: ScanQrCodeModelFactory
 
-    // element in the fragment
-    private lateinit var spinner: Spinner;
-    private lateinit var adapter: ArrayAdapter<String>;
-
     private val contract = CameraActivityContract()
     private val getQrCode = registerForActivityResult(contract) { json: String? ->
         if(json != null) {
@@ -45,7 +41,7 @@ class ScanQrCodeFragment : Fragment() {
         binding = FragmentScanQrCodeBinding.inflate(inflater, container, false)
 
         // integrate viewmodel for databinding
-        viewModelFactory = ScanQrCodeModelFactory("", "", "", "", "", "", "", "", "")
+        viewModelFactory = ScanQrCodeModelFactory("", "", "", "", "", "", "", "", "", "")
         viewModel = ViewModelProvider(this, viewModelFactory).get(ScanQrCodeModel::class.java)
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -54,26 +50,13 @@ class ScanQrCodeFragment : Fragment() {
         binding.person.email.text = viewModel.email
         binding.person.phone.text = viewModel.phone
 
+        binding.banner.spinner.text = viewModel.week
         binding.week.monday.text = viewModel.monday
         binding.week.tuesday.text = viewModel.tuesday
         binding.week.wednesday.text = viewModel.wednesday
         binding.week.thursday.text = viewModel.thursday
         binding.week.friday.text = viewModel.friday
         binding.week.saturday.text = viewModel.saturday
-
-        // spinner
-        val weeklyArray = arrayListOf<String>();
-        val week: Calendar = Calendar.getInstance()
-        for (i in 0..3) {
-            var weeks = (week.get(Calendar.WEEK_OF_YEAR) + i) % 52
-            if (weeks == 0) weeks = 52;
-            weeklyArray.add(weeks.toString())
-        }
-        adapter = ArrayAdapter(binding.root.context, android.R.layout.simple_spinner_dropdown_item, weeklyArray)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner = binding.banner.spinner
-        spinner.adapter = adapter
-
 
         return binding.root
     }
