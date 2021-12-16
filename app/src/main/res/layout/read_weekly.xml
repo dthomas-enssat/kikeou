@@ -6,15 +6,13 @@
             name="day"
             type="fr.enssat.kikeou.thomas_bricaud.search.SearchModel" />
     </data>
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -27,14 +25,13 @@
                 android:layout_width="0dp"
                 android:layout_height="@string/default_height"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -47,14 +44,13 @@
                 android:layout_width="0dp"
                 android:layout_height="@string/default_height"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,14 +63,13 @@
                 android:layout_width="0dp"
                 android:layout_height="@string/default_height"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,14 +82,13 @@
                 android:layout_width="0dp"
                 android:layout_height="@string/default_height"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,14 +101,13 @@
                 android:layout_width="0dp"
                 android:layout_height="@string/default_height"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -127,8 +120,8 @@
                 android:layout_width="0dp"
                 android:layout_height="@string/default_height"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
-        </LinearLayout>
-    </LinearLayout>
+        </TableRow>
+    </TableLayout>
 </layout>

@@ -23,7 +23,7 @@
                 android:id="@+id/name"
                 android:layout_width="@string/default_width"
                 android:layout_height="@string/default_height"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:layout_column="1"
                 android:layout_weight="1" />
         </TableRow>
@@ -41,7 +41,7 @@
                 android:id="@+id/email"
                 android:layout_width="@string/default_width"
                 android:layout_height="@string/default_height"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:layout_column="1"
                 android:layout_weight="1" />
         </TableRow>
@@ -60,7 +60,7 @@
                 android:id="@+id/phone"
                 android:layout_width="@string/default_width"
                 android:layout_height="@string/default_height"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:layout_column="1"
                 android:layout_weight="1"/>
         </TableRow>
