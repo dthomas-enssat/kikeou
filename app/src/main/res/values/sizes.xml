@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="string" name="zero">0dp</item>
+    <item type="string" name="default_margin">20dp</item>
+    <item type="string" name="default_space">40dp</item>
+    <item type="string" name="default_height">50dp</item>
+    <item type="string" name="default_width">100dp</item>
+    <item type="string" name="default_qrcode">100dp</item>
+    <item type="string" name="default_title">30dp</item>
+</resources>
