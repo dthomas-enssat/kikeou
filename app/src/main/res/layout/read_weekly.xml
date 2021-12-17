@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="day"
+            type="fr.enssat.kikeou.thomas_bricaud.search.SearchModel" />
+    </data>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@string/default_height"
+                android:text="@string/monday"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="0dp"
+                android:layout_height="@string/default_height"
+                android:layout_weight="1"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@string/default_height"
+                android:text="@string/tuesday"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tuesday"
+                android:layout_width="0dp"
+                android:layout_height="@string/default_height"
+                android:layout_weight="1"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@string/default_height"
+                android:text="@string/wednesday"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/wednesday"
+                android:layout_width="0dp"
+                android:layout_height="@string/default_height"
+                android:layout_weight="1"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@string/default_height"
+                android:text="@string/thursday"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/thursday"
+                android:layout_width="0dp"
+                android:layout_height="@string/default_height"
+                android:layout_weight="1"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@string/default_height"
+                android:text="@string/friday"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/friday"
+                android:layout_width="0dp"
+                android:layout_height="@string/default_height"
+                android:layout_weight="1"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@string/default_height"
+                android:text="@string/saturday"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/saturday"
+                android:layout_width="0dp"
+                android:layout_height="@string/default_height"
+                android:layout_weight="1"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+    </TableLayout>
+</layout>
