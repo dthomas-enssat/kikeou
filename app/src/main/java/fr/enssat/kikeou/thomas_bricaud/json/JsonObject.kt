@@ -19,7 +19,7 @@ class JsonObject() {
     @field:Json(name = "week")
     var num : Int = 0
     @field:Json(name = "loc")
-    var loc = arrayOf(
+    var loc = listOf(
         Day(1, ""),
         Day(2, ""),
         Day(3, ""),
@@ -34,7 +34,7 @@ class JsonObject() {
         photo = person.photo
         contact = person.contact
         num = week.num
-        loc = arrayOf(
+        loc = listOf(
             Day(1, week.day1),
             Day(2, week.day2),
             Day(3, week.day3),

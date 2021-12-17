@@ -34,7 +34,6 @@ class ScanQrCodeFragment : Fragment() {
             print(json)
             val moshi: Moshi = Moshi.Builder().build()
             val jsonAdapter: JsonAdapter<JsonObject> = moshi.adapter(JsonObject::class.java)
-
             val jsonObject = jsonAdapter.fromJson(json)
             if(jsonObject != null) {
                 var person = jsonObject.getPerson()

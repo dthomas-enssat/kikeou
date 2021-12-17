@@ -168,7 +168,6 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         val bitmap = QRCode.from(json).withSize(500,500).withCharset("UTF-8").bitmap()
         qrCodeView.setImageBitmap(bitmap)
-        qrCodeView.visibility = View.VISIBLE
 
         try {
             val values = ContentValues()
@@ -176,10 +175,10 @@ class GenerateQrCodeFragment : Fragment(), AdapterView.OnItemSelectedListener {
             values.put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
             values.put(
                 MediaStore.MediaColumns.RELATIVE_PATH,
-                Environment.DIRECTORY_DOCUMENTS.toString() + "/Kikeou/"
+                Environment.DIRECTORY_DOCUMENTS.toString() + "/Kikeou"
             )
             val uri = context!!.contentResolver.insert(MediaStore.Files.getContentUri("external"), values)
-            val out = uri?.let { context!!.contentResolver.openOutputStream(it) }
+            val out = uri?.let { context!!.contentResolver.openOutputStream(it, "wt") }
             bitmap.compress(Bitmap.CompressFormat.PNG, NO_COMPRESSION, out)
             out?.flush()
             out?.close()
